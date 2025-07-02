@@ -33,4 +33,10 @@ public class Controller {
     public void delete(@PathVariable String id) {
         todoRepository.deleteById(id);
     }
+
+    @GetMapping("/ping")
+    public String ping() {
+        System.out.println("🚀 Backend fungerar!");
+        return "Backend fungerar!";
+    }
 }

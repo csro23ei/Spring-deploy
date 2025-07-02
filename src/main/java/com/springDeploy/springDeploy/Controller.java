@@ -1,7 +1,5 @@
 package com.springDeploy.springDeploy;
 
-import com.springDeploy.Todo;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,8 +13,8 @@ public class Controller {
     @Autowired
     private TodoRepository todoRepository;
 
-    @GetMapping
-    public List<Todo> getAll() {
+    @GetMapping // <-- ändrat här
+    public List<Todo> getTodos() {
         return todoRepository.findAll();
     }
 
@@ -35,5 +33,4 @@ public class Controller {
     public void delete(@PathVariable String id) {
         todoRepository.deleteById(id);
     }
-
 }

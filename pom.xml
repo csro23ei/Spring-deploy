@@ -61,6 +61,11 @@
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <jvmArguments>
+            -Djavax.net.debug=ssl:handshake:verbose -Dhttps.protocols=TLSv1.2
+          </jvmArguments>
+        </configuration>
       </plugin>
     </plugins>
   </build>
